@@ -1,0 +1,23 @@
+apiVersion: plugin.halo.run/v1alpha1
+kind: Plugin
+metadata:
+  name: plugin-shortcode
+  annotations:
+    "store.halo.run/app-id": "app-plugin-shortcode"
+spec:
+  enabled: true
+  requires: ">=2.23.0"
+  author:
+    name: Akvicor
+    website: https://github.com/Akvicor
+  logo: logo.svg
+  repo: https://github.com/Akvicor/plugin-kmath
+  homepage: https://www.halo.run/store/apps/app-plugin-shortcode
+  issues: https://www.halo.run/store/apps/app-plugin-shortcode?tab=comment
+  displayName: "Shortcode"
+  description: "为默认编辑器和前台渲染提供常用自定义标签支持"
+  settingName: plugin-shortcode-settings
+  configMapName: plugin-shortcode-configMap
+  license:
+    - name: "GPL-3.0"
+      url: "https://raw.githubusercontent.com/Akvicor/plugin-shortcode/refs/heads/main/LICENSE"

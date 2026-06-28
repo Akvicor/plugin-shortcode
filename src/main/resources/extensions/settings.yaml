@@ -1,0 +1,65 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: plugin-shortcode-settings
+spec:
+  forms:
+    - group: editor
+      label: 编辑器功能
+      formSchema:
+        - $formkit: switch
+          name: enable_abbr
+          id: enable_abbr
+          key: enable_abbr
+          label: 启用缩写
+          help: 在默认编辑器中显示“缩写”插入入口
+          value: true
+        - $formkit: switch
+          name: enable_arrow
+          id: enable_arrow
+          key: enable_arrow
+          label: 启用箭头
+          help: 在默认编辑器中显示“箭头”插入入口
+          value: true
+        - $formkit: switch
+          name: enable_colour_font
+          id: enable_colour_font
+          key: enable_colour_font
+          label: 启用彩色文字
+          help: 在默认编辑器中显示“彩色文字”插入入口
+          value: true
+        - $formkit: switch
+          name: enable_heimu
+          id: enable_heimu
+          key: enable_heimu
+          label: 启用黑幕
+          help: 在默认编辑器中显示“黑幕”插入入口
+          value: true
+        - $formkit: switch
+          name: enable_kidding
+          id: enable_kidding
+          key: enable_kidding
+          label: 启用删除线
+          help: 在默认编辑器中显示“删除线”插入入口
+          value: true
+        - $formkit: switch
+          name: enable_ruby
+          id: enable_ruby
+          key: enable_ruby
+          label: 启用注音
+          help: 在默认编辑器中显示“注音”插入入口
+          value: true
+        - $formkit: switch
+          name: enable_tag
+          id: enable_tag
+          key: enable_tag
+          label: 启用标签
+          help: 在默认编辑器中显示“标签”插入入口
+          value: true
+        - $formkit: switch
+          name: enable_hide_and_seek
+          id: enable_hide_and_seek
+          key: enable_hide_and_seek
+          label: 启用隐藏彩蛋
+          help: 在默认编辑器中显示“隐藏彩蛋”插入入口
+          value: true

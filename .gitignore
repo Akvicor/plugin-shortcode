@@ -1,0 +1,33 @@
+### Gradle
+.gradle
+/build/
+/out/
+!gradle/wrapper/gradle-wrapper.jar
+
+### Node
+node_modules
+console/node_modules
+console/dist
+pnpm-debug.log*
+
+### IDE
+.idea
+*.iml
+.vscode
+
+### OS
+.DS_Store
+
+### Local
+application-local.yml
+application-local.yaml
+application-local.properties
+
+### Reference material
+/references
+
+### Local code index
+/.codegraph/
+
+### Generated plugin UI assets
+/src/main/resources/console/

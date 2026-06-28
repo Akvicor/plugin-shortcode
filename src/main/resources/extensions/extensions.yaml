@@ -1,0 +1,21 @@
+apiVersion: plugin.halo.run/v1alpha1
+kind: ExtensionDefinition
+metadata:
+  name: shortcode-post-content-injection
+spec:
+  className: run.halo.shortcode.DefaultPostContentHandler
+  extensionPointName: reactive-post-content-handler
+  displayName: "Shortcode Post Content Handler"
+  description: "为文章内容按需注入 Shortcode 静态资源。"
+
+---
+
+apiVersion: plugin.halo.run/v1alpha1
+kind: ExtensionDefinition
+metadata:
+  name: shortcode-single-page-content-injection
+spec:
+  className: run.halo.shortcode.DefaultSinglePageContentHandler
+  extensionPointName: reactive-singlepage-content-handler
+  displayName: "Shortcode Single Page Content Handler"
+  description: "为独立页内容按需注入 Shortcode 静态资源。"

@@ -1,0 +1,68 @@
+plugins {
+    id 'java'
+    id "com.github.node-gradle.node" version "7.0.2"
+    id "run.halo.plugin.devtools" version "0.6.2"
+}
+
+group 'run.halo.shortcode'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://s01.oss.sonatype.org/content/repositories/releases' }
+    maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
+    maven { url 'https://repo.spring.io/milestone' }
+}
+
+dependencies {
+    implementation platform('run.halo.tools.platform:plugin:2.23.0')
+    compileOnly 'run.halo.app:api'
+
+    testImplementation 'run.halo.app:api'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+    options.release = 21
+}
+
+node {
+    nodeProjectDir = file("${project.projectDir}/console")
+}
+
+tasks.register('installDepsForUI', PnpmTask) {
+    args = ['install']
+}
+
+tasks.register('buildFrontend', PnpmTask) {
+    args = ['build']
+    dependsOn('installDepsForUI')
+}
+
+tasks.register('checkFrontend', PnpmTask) {
+    args = ['type-check']
+    dependsOn('installDepsForUI')
+}
+
+tasks.named('compileJava').configure {
+    dependsOn('buildFrontend')
+}
+
+tasks.named('check').configure {
+    dependsOn('checkFrontend')
+}
+
+halo {
+    version = '2.22.2'
+}
