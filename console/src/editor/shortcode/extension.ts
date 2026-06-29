@@ -19,7 +19,6 @@ import {
   parseShortcodeAttrs,
 } from "./core/registry";
 import type { ShortcodeAttrs, ShortcodeKind } from "./core/types";
-import { ARROW_DIRECTIONS } from "./tags/arrow";
 import { getEnabledShortcodeDefinitions } from "./setting";
 
 /**
@@ -121,12 +120,6 @@ function createShortcodeAttributes() {
       rendered: false,
       parseHTML: (element: HTMLElement) =>
         parseShortcodeAttrs(element).dashedBorder || "false",
-    },
-    direction: {
-      default: ARROW_DIRECTIONS[0].value,
-      rendered: false,
-      parseHTML: (element: HTMLElement) =>
-        parseShortcodeAttrs(element).direction || ARROW_DIRECTIONS[0].value,
     },
   };
 }

@@ -15,20 +15,6 @@ spec:
           help: 在默认编辑器中显示“缩写”插入入口
           value: true
         - $formkit: switch
-          name: enable_arrow
-          id: enable_arrow
-          key: enable_arrow
-          label: 启用箭头
-          help: 在默认编辑器中显示“箭头”插入入口
-          value: true
-        - $formkit: switch
-          name: enable_colour_font
-          id: enable_colour_font
-          key: enable_colour_font
-          label: 启用彩色文字
-          help: 在默认编辑器中显示“彩色文字”插入入口
-          value: true
-        - $formkit: switch
           name: enable_heimu
           id: enable_heimu
           key: enable_heimu

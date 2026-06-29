@@ -49,6 +49,5 @@ export function parseStoredAttrs(element: HTMLElement) {
     tagEffect: element.dataset.shortcodeTagEffect || "",
     content: element.dataset.shortcodeContent || "",
     dashedBorder: element.dataset.shortcodeDashedBorder || "",
-    direction: element.dataset.shortcodeDirection || "",
   };
 }

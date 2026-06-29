@@ -5,8 +5,6 @@
  */
 export type ShortcodeKind =
   | "abbr"
-  | "arrow"
-  | "colourFont"
   | "heimu"
   | "hideAndSeekHtml"
   | "hideAndSeekMarkdown"
@@ -77,8 +75,6 @@ export interface ShortcodeAttrs {
   content?: string;
   /** 隐藏彩蛋显示后是否使用虚线边框包裹，使用字符串便于写入 data 属性。 */
   dashedBorder?: string;
-  /** 箭头方向字段。 */
-  direction?: string;
 }
 
 /**

@@ -35,7 +35,6 @@ const shortcodeAttrs = computed<ShortcodeAttrs>(() => ({
   tagEffect: props.node.attrs.tagEffect,
   content: props.node.attrs.content,
   dashedBorder: props.node.attrs.dashedBorder,
-  direction: props.node.attrs.direction,
 }));
 
 /** 正文中直接展示的最终 shortcode HTML。 */

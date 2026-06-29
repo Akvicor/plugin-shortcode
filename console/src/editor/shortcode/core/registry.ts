@@ -5,8 +5,6 @@ import type {
 } from "./types";
 import { parseStoredAttrs } from "./utils";
 import { abbrShortcode } from "../tags/abbr";
-import { arrowShortcode } from "../tags/arrow";
-import { colourFontShortcode } from "../tags/colour-font";
 import { heimuShortcode } from "../tags/heimu";
 import {
   hideAndSeekHtmlShortcode,
@@ -23,8 +21,6 @@ import { tagShortcode } from "../tags/tag";
  */
 export const SHORTCODE_DEFINITIONS: ShortcodeDefinition[] = [
   abbrShortcode,
-  arrowShortcode,
-  colourFontShortcode,
   heimuShortcode,
   kiddingShortcode,
   rubyShortcode,
@@ -108,6 +104,5 @@ export function parseShortcodeAttrs(element: HTMLElement): ShortcodeAttrs {
     tagEffect: storedAttrs.tagEffect,
     content: storedAttrs.content,
     dashedBorder: storedAttrs.dashedBorder,
-    direction: storedAttrs.direction,
   };
 }

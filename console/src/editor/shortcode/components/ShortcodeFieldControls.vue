@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ARROW_DIRECTIONS, getArrowDirection } from "../tags/arrow";
 import type {
   ShortcodeAttrs,
   ShortcodeDefinition,
@@ -169,20 +168,6 @@ function updateTagColour(colour: string) {
 }
 
 /**
- * 更新箭头方向，同时同步方向对应的默认颜色。
- *
- * @param event 选择事件
- */
-function updateArrowDirection(event: Event) {
-  const target = event.target as HTMLSelectElement;
-  const direction = getArrowDirection(target.value);
-  emit("update", {
-    direction: direction.value,
-    colour: direction.defaultColour,
-  });
-}
-
-/**
  * 更新选择字段。
  *
  * @param field 字段定义
@@ -225,31 +210,6 @@ function updateColourField(field: ShortcodeFieldDefinition, event: Event) {
     class="shortcode-field-controls"
     :class="{ 'shortcode-field-controls--block': block }"
   >
-    <label
-      v-if="definition.kind === 'arrow'"
-      class="shortcode-field-controls__field"
-    >
-      <span
-        v-if="!hideLabels"
-        class="shortcode-field-controls__label"
-      >
-        方向
-      </span>
-      <select
-        class="shortcode-field-controls__select"
-        :value="attrs.direction"
-        @change="updateArrowDirection"
-      >
-        <option
-          v-for="direction in ARROW_DIRECTIONS"
-          :key="direction.value"
-          :value="direction.value"
-        >
-          {{ direction.label }}
-        </option>
-      </select>
-    </label>
-
     <label
       v-for="field in definition.fields"
       :key="field.name"

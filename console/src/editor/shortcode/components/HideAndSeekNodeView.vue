@@ -31,7 +31,6 @@ const shortcodeAttrs = computed<ShortcodeAttrs>(() => ({
   tagEffect: props.node.attrs.tagEffect,
   content: props.node.attrs.content,
   dashedBorder: props.node.attrs.dashedBorder,
-  direction: props.node.attrs.direction,
 }));
 
 /** 右侧预览只展示隐藏内容，不展示外层隐藏容器。 */
