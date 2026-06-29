@@ -42,6 +42,15 @@ const DEFAULT_TAG_TEXT_COLOUR = DEFAULT_TAG_COLOUR;
 /** 标签深色样式的默认文字色。 */
 const DEFAULT_DARK_TAG_TEXT_COLOUR = "#FFFFFF";
 
+/** Element Plus light 主题背景色对应主色 light-9，即 90% 白色混合。 */
+const TAG_LIGHT_BACKGROUND_WHITE_RATIO = 0.9;
+
+/** Element Plus light 主题边框色对应主色 light-8，即 80% 白色混合。 */
+const TAG_LIGHT_BORDER_WHITE_RATIO = 0.8;
+
+/** Element Plus plain 主题边框色对应主色 light-5，即 50% 白色混合。 */
+const TAG_PLAIN_BORDER_WHITE_RATIO = 0.5;
+
 /** 标签预设颜色。 */
 const TAG_TYPE_COLOURS: Record<TagType, string> = {
   primary: "#409EFF",
@@ -213,14 +222,14 @@ function getTagEffectColours(effect: TagEffect, mainColour: string) {
   if (effect === "plain") {
     return {
       backgroundColour: "#FFFFFF",
-      borderColour: mainColour,
+      borderColour: mixWithWhite(mainColour, TAG_PLAIN_BORDER_WHITE_RATIO),
       defaultTextColour: getDefaultTextColour(effect, mainColour),
     };
   }
 
   return {
-    backgroundColour: "#FFFFFF",
-    borderColour: mixWithWhite(mainColour, 0.35),
+    backgroundColour: mixWithWhite(mainColour, TAG_LIGHT_BACKGROUND_WHITE_RATIO),
+    borderColour: mixWithWhite(mainColour, TAG_LIGHT_BORDER_WHITE_RATIO),
     defaultTextColour: getDefaultTextColour(effect, mainColour),
   };
 }
