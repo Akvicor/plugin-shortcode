@@ -193,6 +193,9 @@ const InlineShortcodeExtension = Node.create<ExtensionOptions>({
 
   atom: true,
 
+  /** 行内 shortcode 是完整原子节点，不允许粗体、删除线、颜色等 mark 包裹节点外层。 */
+  marks: "",
+
   selectable: true,
 
   draggable: false,

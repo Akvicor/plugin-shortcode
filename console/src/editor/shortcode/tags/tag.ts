@@ -33,6 +33,16 @@ const DEFAULT_TAG_EFFECT: TagEffect = "light";
 /** 标签默认文字。 */
 const DEFAULT_TAG_TEXT = "标签";
 
+/** 标签 shortcode 透明外层类名，仅承载 data-shortcode-* 属性。 */
+const TAG_SHORTCODE_HOST_CLASS = "shortcode-tag-host";
+
+/** 标签可视内层类名，所有视觉样式都只写入该元素。 */
+const TAG_VISUAL_CLASS = "shortcode-tag";
+
+/** 标签 shortcode 透明外层样式，避免编辑器刷新后把背景画到节点边界上。 */
+const TAG_SHORTCODE_HOST_STYLE =
+  "display: inline-flex;align-items: center;vertical-align: baseline;max-width: 100%;margin: 0;padding: 0;border: 0;background: transparent;box-shadow: none;line-height: inherit;";
+
 /** 标签默认主色。 */
 const DEFAULT_TAG_COLOUR = "#409EFF";
 
@@ -310,7 +320,7 @@ export const tagShortcode: ShortcodeDefinition = {
         ? effectColours.defaultTextColour
         : storedTextColour;
 
-    return `<span class="shortcode-tag" style="display: inline-flex;align-items: center;vertical-align: baseline;max-width: 100%;padding: 0.08em 0.5em;border: 1px solid ${escapeHtml(
+    return `<span class="${TAG_SHORTCODE_HOST_CLASS}" style="${TAG_SHORTCODE_HOST_STYLE}"><span class="${TAG_VISUAL_CLASS}" style="display: inline-flex;align-items: center;vertical-align: baseline;max-width: 100%;padding: 0.08em 0.5em;border: 1px solid ${escapeHtml(
       effectColours.borderColour
     )};border-radius: 4px;background-color: ${escapeHtml(
       effectColours.backgroundColour
@@ -318,6 +328,6 @@ export const tagShortcode: ShortcodeDefinition = {
       textColour
     )};font-size: 0.82em;font-weight: 500;line-height: 1.35;white-space: nowrap;text-decoration: none;background-clip: padding-box;">${escapeHtml(
       attrs.tag
-    )}</span>`;
+    )}</span></span>`;
   },
 };

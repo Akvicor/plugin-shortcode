@@ -90,10 +90,26 @@ function updateAttrs(attrs: Partial<ShortcodeAttrs>) {
   display: inline-block;
   max-width: 100%;
   margin: 0 2px;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  vertical-align: baseline;
+}
+
+.shortcode-inline-node :deep(.v-popper) {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  margin: 0;
   padding: 0;
   border: 0;
-  background: transparent !important;
+  background: transparent;
+  box-shadow: none;
   vertical-align: baseline;
+  line-height: inherit;
 }
 
 .shortcode-inline-node__rendered {
@@ -101,9 +117,11 @@ function updateAttrs(attrs: Partial<ShortcodeAttrs>) {
   align-items: center;
   max-width: 100%;
   cursor: pointer;
-  padding: 0;
-  border: 0;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
   background: transparent !important;
+  background-color: transparent !important;
   box-shadow: none !important;
   line-height: inherit;
 }
